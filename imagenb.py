@@ -2,7 +2,7 @@
 import cv2
 
 #lire image
-image=cv2.imread("image.jpg")
+#image=cv2.imread("image.jpg")
 
 
 #couleur
@@ -10,9 +10,13 @@ image=cv2.imread("image.jpg")
 
 #noir et blanc
 gray=cv2.imread("image.jpg",0)
-cv2.imshow("BW", gray)
+#cv2.imshow("BW", gray)
 
-cv2.waitKey()
+hsv = cv2.cvtColor(gray, cv2.COLOR_BGR2HSV)
+cv2.namedWindow('hsv', cv2.WINDOW_NORMAL)
+cv2.imshow('hsv',hsv)
+
+cv2.waitKey(0)
 cv2.destroyAllWindows()
 
 #save image
